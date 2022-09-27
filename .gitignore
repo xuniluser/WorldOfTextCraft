@@ -1,3 +1,6 @@
 *.o
 WorldOfTextCraft
 .vscode/
+test_battle
+test_boss
+test_entity
