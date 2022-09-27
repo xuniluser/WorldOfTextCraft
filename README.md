@@ -1,8 +1,6 @@
 # WorldOfTextCraft
 This is a trivial turn-based role-playing fighting game, designed to teach C++.
 
-Apologies to Blizzard Entertainment and the Three Stooges for cribbing (and butchering) their content.
-
 The goal was to make this "bare bones" without a complicated build so people can see for themselves what is involved in the software.
 This does require C++11 because of the use of a `vector< shared_ptr<T> >` for memory management.
 There is a very trivial Makefile to create three executables:
@@ -13,44 +11,6 @@ There is a very trivial Makefile to create three executables:
 - **WorldOfTextCraft**: the actual text-based RPG.
 =
 In order to compile just type `make`.
-
-## PHY410/505 at UB
-
-### Docker image
-
-If you are using the [CompPhys](https://github.com/ubsuny/CompPhys)
-repository and the [docker image](https://hub.docker.com/r/subsuny/compphys) you
-should add this to the `results` folder **in your host OS**:
-
-``` bash
-cd /your/working/directory/results
-git clone git@github.com:ubsuny/WorldOfTextCraft.git
-```
-
-so it looks like this:
-
-``` bash
-└── results
-    ├── CompPhys
-    └── WorldOfTextCraft
-```
-
-Then go to the parent folder of the `results` folder:
-
-``` bash
-cd /your/working/directory/
-./runDocker.sh ubsuny/compphys:latest 1
-```
-
-This will launch the docker image, so you will be in the `/results`
-folder in docker.
-
-You can then:
-
-``` bash
-cd WorldOfTextCraft
-make
-```
 
 ## Usage
 
@@ -67,7 +27,7 @@ Here, we have:
 For instance:
 
 ``` bash
-./WorldOfTextCraft AshenVerdict.txt Arthas.txt ArthasAttacks.txt
+./WorldOfTextCraft IbalonVerdict.txt Oryol.txt OryolAttacks.txt
 ```
 
 ## Syntax
@@ -140,107 +100,115 @@ Once a character reaches 0 hit points, it dies. All characters have a common bas
 
 You can adjust the game mechanics to add player classes of your own!
 
-## Playing WorldOfTextCraft : The Lich King Scenario
+## Playing WorldOfTextCraft : The Ibalon Scenario
 
-To execute "The Lich King" Scenario, execute:
+To execute "The Ibalon" Scenario, execute:
 
 ``` bash
-./WorldOfTextCraft AshenVerdict.txt Arthas.txt ArthasAttacks.txt
+./WorldOfTextCraft IbalonVerdict.txt Oryol.txt OryolAttacks.txt
 ```
 
 You will be prompted as follows:
 
 ``` text
 reading PC configuration
-Added entity:     Fordring (   Warrior): HP=  100, mana =     0, no target
-Added entity:       Thrall (    Priest): HP=  100, mana =   100, no target
-Added entity:     Mograine (     Rogue): HP=  100, mana =     0, no target
+Added entity:       Tuktok (     Rogue): HP=  100, mana =     0, no target
+Added entity:      Bolinao (    Priest): HP=  100, mana =   100, no target
+Added entity:     Handiong (   Warrior): HP=  100, mana =     0, no target
+Added entity:      Maribok (    Priest): HP=  100, mana =   100, no target
+Added entity:     Poringot (     Rogue): HP=  100, mana =     0, no target
 reading NPC configuration
-Input boss:       Arthas (      Boss): HP=  500, mana =     0, no target
+Input boss:        Oryol (      Boss): HP=  500, mana =     0, no target
 reading NPC action script
-|--------------------------------------------|
-|--------------------------------------------|
-|--------------------------------------------|
-|--------------------------------------------|
-|        __    __           _     _         |
-|       / / /\ \ \___  _ __| | __| |        |
-|       \ \/  \/ / _ \| '__| |/ _` |        |
-|        \  /\  / (_) | |  | | (_| |        |
-|         \/  \/ \___/|_|  |_|\__,_|        |
-|                                           |
-|                       __                  |
-|                 ___  / _|                 |
-|                / _ \| |_                  |
-|               | (_) |  _|                 |
-|                \___/|_|                   |
-|                                           |
-| _____          _     ___           __ _   |
-|/__   \_____  _| |_  / __\ __ __ _ / _| |_ |
-|  / /\/ _ \ \/ / __|/ / | '__/ _` | |_| __||
-| / / |  __/>  <| |_/ /__| | | (_| |  _| |_ |
-| \/   \___/_/\_\\__\____/_|  \__,_|_|  \__||
-|                                           |
-|--------------------------------------------|
-|--------------------------------------------|
-|--------------------------------------------|
-Welcome brave traveler...
-You venture forth from your stronghold in Azeroth to the icy continent of Northrend, accompanied only by your fellow adventurers and your courage. You have tracked Arthas Menethil to his Frozen Throne in the plagued wastelands of Icecrown. Once a brave champion of Lordaeron, Arthas was corrupted by evil and his soul subsumed by the shaman Ner'zhul upon taking the cursed Runeblade, Frostmourne, forming the entity known as the Lich King, threatening all life in Azeroth to become mindless undead slaves of the Burning Legion. The Knights of the Ebon Blade and the Argent Crusade have now formed the Ashen Verdict, and tasked you to destroy the Lich King and end his undead plague upon Azeroth. As you reach the Frozen Throne, the Lich King's seat, you hear a voice in your head. The Lich King whispers "Young heroes, I was once like you. You have come to this place seeking to bring judgement upon the damned. But, be warned. In the end, all that awaits you is death. Only then will you understand, you've been following in my footsteps all along. So come then, you heroes! Come in all your power and glory! For in this final hour, all must serve the one... true... king... Frostmourne HUNGERS....". The battle is joined.
-Are you ready to begin? [Y/n]
+  _______      ___      .___  ___.  _______
+ /  _____|    /   \     |   \/   | |   ____|
+|  |  __     /  ^  \    |  \  /  | |  |_
+|  | |_ |   /  /_\  \   |  |\/|  | |   __|
+|  |__| |  /  _____  \  |  |  |  | |  |____
+ \______| /__/     \__\ |__|  |__| |_______|
+  ______    _______
+ /  __  \  |   ____|
+|  |  |  | |  |__
+|  |  |  | |   __|
+|  `--'  | |  |
+ \______/  |__|
+  ______   .______          ___       _______   ______   .__   __.      _______.
+ /  __  \  |   _  \        /   \     /  _____| /  __  \  |  \ |  |     /       |
+|  |  |  | |  |_)  |      /  ^  \   |  |  __  |  |  |  | |   \|  |    |   (----`
+|  |  |  | |      /      /  /_\  \  |  | |_ | |  |  |  | |  . `  |     \   \
+|  `--'  | |  |\  \----./  _____  \ |  |__| | |  `--'  | |  |   | .----)   |
+ \______/  | _| `._____/__/     \__\ \______|  \______/  |__| \__| |_______/
+Welcome YOUR NAME.
+
+LONG, LONG AGO, SOMEWHERE IN THE Bicol Region, existed a prosperous and beautiful kingdom called Ibalon. It was renowned for its lush forest, happy inhabitants and with you as its mighty ruler. All nature adored you. The Mayas chirped about their handsome and wise ruler; while Maribok, the king-frog, croaked day and night of your bravery. Tuktok, the mother Kalaw, as she taught her baby horn bills how to peck faster, described to them how your muscles glistened under the sun. Even Poringot, the bald rooster, would wiggle his tail to honor you. Bolinao, the chief of small fishes, would lead the school of fish to the farthest nook of the sea telling all the creatures they met how good a fisherman you are. You are much-adored but is terribly unhappy, for deep in the forest lived monsters. Punong-the one-eyed, three throated creature, the wild carabaos, the gigantic crocodiles and the snakes that lived in Mount Hantik are your enemies. These beasts were led by the wily serpent, Oryol, who was difficult to destroy, for she was more cunning. Oryol was once the most beautiful maiden of lbalon. Envious of her beauty, Hilang, the evil witch, lured Oryol to the forest and converted her into a serpent by day and a lovely woman by midnight. Hilang vowed on a pitogo seed that only love could free Oryol from the curse. The promise was sealed in the enchanted pitogo, and only its destruction held the key to Oryol ‘s freedom. One night, when the moon showed its round face, the monsters attacked the village...
+
+Are you ready to start your adventure? [Y/n]
 ```
 
 You can type "n" to exit, or "y" to begin. You will then see a description of the Boss's first attack: 
 
+`Y`
 ``` text
-Excellent... let us begin...
- ----- Action list ----
-Arthas will perform action 0 on their target :  NO TARGET!
-Arthas will perform action 3 on their target :  NO TARGET!
+Excellent!... let us begin...
+
+----- Action list -----
+Oryol will perform action 0 on their target :  NO TARGET!
+Oryol will perform action 3 on their target :  NO TARGET!
 ------------------------------- Turn : 0-------------------------------
 --------------
    === players:
-    Fordring (   Warrior): HP=  100, mana =     0, no target
-      Thrall (    Priest): HP=  100, mana =   100, no target
-    Mograine (     Rogue): HP=  100, mana =     0, no target
+      Tuktok (     Rogue): HP=  100, mana =     0, no target
+     Bolinao (    Priest): HP=  100, mana =   100, no target
+    Handiong (   Warrior): HP=  100, mana =     0, no target
+     Maribok (    Priest): HP=  100, mana =   100, no target
+    Poringot (     Rogue): HP=  100, mana =     0, no target
 
    === monsters:
-      Arthas (      Boss): HP=  500, mana =     0, no target
+       Oryol (      Boss): HP=  500, mana =     0, no target
 --------------
-Arthas attacks Fordring with attack power 20
-Fordring loses 10 hit points after attack 20 and defense 10
-Arthas multi-attacks Fordring with attack power 8
-Fordring loses 0 hit points after attack 8 and defense 10
-Arthas multi-attacks Thrall with attack power 8
-Thrall loses 8 hit points after attack 8 and defense 0
-Arthas multi-attacks Mograine with attack power 8
-Mograine loses 8 hit points after attack 8 and defense 0
-Action for Fordring:
+Tuktok loses 20 hit points after attack 20 and defense 0
+Oryol attacked Tuktok with attack power 20 for damage 20
+Oryol multi-attacks Tuktok with attack power 8
+Tuktok loses 8 hit points after attack 8 and defense 0
+Oryol multi-attacks Bolinao with attack power 8
+Bolinao loses 8 hit points after attack 8 and defense 0
+Oryol multi-attacks Handiong with attack power 8
+Handiong loses 0 hit points after attack 8 and defense 10
+Oryol multi-attacks Maribok with attack power 8
+Maribok loses 8 hit points after attack 8 and defense 0
+Oryol multi-attacks Poringot with attack power 8
+Poringot loses 8 hit points after attack 8 and defense 0
+
+Action for Tuktok:
 ```
 
 You are now at the action prompt.
 The syntax to perform actions is the same as for the scripting language, so type:
 
-`Fordring;defend;Arthas`
+`Tuktok;attack;Oryol;`
 
 The game will then print the status of your attack:
 
-`Fordring defends against Arthas, defense mitigation 10`
+`Oryol loses 11 hit points after attack 12 and defense 1`
+`Tuktok attacked Oryol with attack power 12 for damage 11`
 
 You will then have the next player.
 Enter the next action, and you will again see a printout of the status of your attack:
 
 ``` text
-Action for Thrall:
-Thrall;heal;Mograine;
-Thrall heals Mograine for 12
+Action for Bolinao:
+Bolinao;heal;Tuktok;
+Bolinao healed Tuktok with heal power 12 for 12
 ```
 
-Finally you will see your next character.
+
+Action prompts for all your remaining entities until finally you will see your last character.
 Enter the next action, and another printout will occur:
 
 ``` text
-Mograine;attack;Arthas;
-Mograine attacks Arthas with attack power 20
-Arthas loses 20 hit points after attack 20 and defense 0
+Poringot;attack;Oryol;
+Oryol loses 19 hit points after attack 20 and defense 1
+Poringot attacked Oryol with attack power 20 for damage 19
 ```
 
 This reaches the end of your turn, so the status is printed again, and it is the boss's turn once more:
@@ -249,120 +217,29 @@ This reaches the end of your turn, so the status is printed again, and it is the
 ------------------------------- Turn : 1-------------------------------
 --------------
    === players:
-    Fordring (   Warrior): HP=   90, mana =     0, target=      Arthas
-      Thrall (    Priest): HP=   92, mana =    90, target=    Mograine
-    Mograine (     Rogue): HP=  100, mana =     0, target=      Arthas
+      Tuktok (     Rogue): HP=   72, mana =     0, target=    Handiong
+     Bolinao (    Priest): HP=   92, mana =    90, target=    Handiong
+    Handiong (   Warrior): HP=  100, mana =     0, target=      Tuktok
+     Maribok (    Priest): HP=   92, mana =    90, target=    Poringot
+    Poringot (     Rogue): HP=  100, mana =     0, target=       Oryol
 
    === monsters:
-      Arthas (      Boss): HP=  480, mana =     0, target=    Fordring
+       Oryol (      Boss): HP=  481, mana =     0, target=      Tuktok
 --------------
-Arthas attacks Fordring with attack power 20
-Fordring loses 10 hit points after attack 20 and defense 10
-Arthas multi-attacks Fordring with attack power 8
-Fordring loses 0 hit points after attack 8 and defense 10
-Arthas multi-attacks Thrall with attack power 8
-Thrall loses 8 hit points after attack 8 and defense 0
-Arthas multi-attacks Mograine with attack power 8
-Mograine loses 8 hit points after attack 8 and defense 0
-Action for Fordring:
+Tuktok loses 20 hit points after attack 20 and defense 0
+Oryol attacked Tuktok with attack power 20 for damage 20
+Oryol multi-attacks Tuktok with attack power 8
+Tuktok loses 8 hit points after attack 8 and defense 0
+Oryol multi-attacks Bolinao with attack power 8
+Bolinao loses 8 hit points after attack 8 and defense 0
+Oryol multi-attacks Handiong with attack power 8
+Handiong loses 0 hit points after attack 8 and defense 10
+Oryol multi-attacks Maribok with attack power 8
+Maribok loses 8 hit points after attack 8 and defense 0
+Oryol multi-attacks Poringot with attack power 8
+Poringot loses 8 hit points after attack 8 and defense 0
+
+Action for Tuktok:
 ```
 
 You can then cycle through until your party is victorious (the Boss dies), or fails (all of you die). Then the scenario ends. To exit prematurely, simply "control-C" out.
-
-## Battle Log
-
-The C++ game will create a log of actions in a
-[JSON](https://www.json.org) format. This will look something like:
-
-``` json
-    {"Turns":[                         # Name of the entire structure ("Turns")
-    {"Turn":0,                         # This turn number (0)
-    "Arthas":{"Attacks":[10,0,8,8],    # "Name of attacker": "action":[values for action],...
-    "Defends":[0],
-    "Heals":[0],
-    "DamageReceived":[20],
-    "HealingRecieved":[0]
-    },
-    "Fordring":{"Attacks":[0],         # "Name of next attacker": "action":[values for action],...
-    "Defends":[10],
-    "Heals":[0],
-    "DamageReceived":[10,0],
-    "HealingRecieved":[0]
-    },
-    "Thrall":{"Attacks":[0],           # and so on
-    "Defends":[0],
-    "Heals":[8],
-    "DamageReceived":[8],
-    "HealingRecieved":[0]
-    },
-    "Mograine":{"Attacks":[20],
-    "Defends":[0],
-    "Heals":[0],
-    "DamageReceived":[8],
-    "HealingRecieved":[8]
-    }
-    },
-    {"Turn":1,                       # Next turn, and so on.
-    ...
-    }
-    ]}
-```
-
-There is a script `readbattle.py` that will parse this JSON file and
-put the data into a `numpy ndarray`. If you set the `--verbose` flag
-on the command line, it will also print a table that looks more
-columnar like this, with the column headings printed on top:
-
-``` text
-['Attacks', 'Defends', 'Heals', 'DamageReceived', 'HealingRecieved']
------------- turn :  0  ---------------
-====     Arthas : 26,  0,  0, 20,  0,
-====   Fordring :  0, 10,  0, 10,  0,
-====     Thrall :  0,  0,  8,  8,  0,
-====   Mograine : 20,  0,  0,  8,  8,
------------- turn :  1  ---------------
-====     Arthas : 26,  0,  0, 20,  0,
-====   Fordring :  0, 10,  0, 10,  0,
-====     Thrall :  0,  0,  8,  8,  0,
-====   Mograine : 20,  0,  0,  8,  8,
-...
-
-```
-
-The `numpy` array looks like:
-
-``` text
-[[[26.  0.  0. 20.  0.]             <--- Character 0 (in this case, Arthas)
-  [26.  0.  0. 20.  0.]
-  [26.  0.  0. 20.  0.]
-  [26.  0.  0. 20.  0.]
-  [26.  0.  0. 20.  0.]
-  [26.  0.  0. 20.  0.]
-  [26.  0.  0. 20.  0.]
-  [26.  0.  0. 20.  0.]
-  [26.  0.  0. 20.  0.]
-  [26.  0.  0. 20.  0.]
-  [28.  0.  0. 20.  0.]
-  [28.  0.  0. 20.  0.]
-  [28.  0.  0. 20.  0.]
-  [28.  0.  0. 20.  0.]]
-
- [[ 0. 10.  0. 10.  0.]            <--- Character 1 (in this case, Fordring)
-  [ 0. 10.  0. 10.  0.]
-  [ 0. 10.  0. 10.  0.]
-  [ 0. 10.  0. 10.  0.]
-  [ 0. 10.  0. 10.  0.]
-  [ 0. 10.  0. 10.  0.]
-  [ 0. 10.  0. 10.  0.]
-  [ 0. 10.  0. 10.  0.]
-  [ 0. 10.  0. 10.  0.]
-  [ 0.  0.  0. 10.  0.]
-  [ 0.  0.  0.  0.  0.]
-  [ 0.  0.  0.  0.  0.]
-  [ 0.  0.  0.  0.  0.]
-  [ 0.  0.  0.  0.  0.]]
-
-...
-```
-
-The output array is called `npdata` and can be used for various analysis purposes.

@@ -46,11 +46,11 @@ int main( int argc, char ** argv ) {
 
 
   battle.splash();
-  std::cout << "Are you ready to begin? [Y/n] " << std::endl;
+  std::cout << std::endl << "Are you ready to start your adventure? [Y/n] " << std::endl;
   char c;
   std::cin >> c;
   if ( c == 'y' || c == 'Y') {
-    std::cout << "Excellent!... let us begin..." << std::endl;
+    std::cout << std::endl << "Excellent!... let us begin..." << std::endl << std::endl;
 
     battle.printActions(); 
 
