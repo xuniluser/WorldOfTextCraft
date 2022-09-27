@@ -57,7 +57,7 @@ int main( int argc, char ** argv ) {
   
 
     // Now loop and FIGHT!
-    success= true;
+    success = true;
     do {
       battle.print();
 
