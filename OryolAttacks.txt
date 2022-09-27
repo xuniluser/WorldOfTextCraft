@@ -1,0 +1,3 @@
+! Test battle configuration.
+Oryol;attack;target;
+Oryol;attack;all;

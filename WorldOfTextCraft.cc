@@ -1,10 +1,10 @@
-#include "Entity.h"
+// Main program
 
+#include "Entity.h"
 #include "Warrior.h"
 #include "Rogue.h"
 #include "Priest.h"
 #include "Boss.h"
-
 #include "Battle.h"
 
 int main( int argc, char ** argv ) {
@@ -72,13 +72,13 @@ int main( int argc, char ** argv ) {
   std::ofstream logfile(logname);
   battle.printLog(logfile); 
   
-
-  std::cout << "   ___                _ _                  _ " << std::endl;
-  std::cout << "  / _ \\___   ___   __| | |__  _   _  ___  / \\" << std::endl;
-  std::cout << " / /_\\/ _ \\ / _ \\ / _` | '_ \\| | | |/ _ \\/  /" << std::endl;
-  std::cout << "/ /_\\\\ (_) | (_) | (_| | |_) | |_| |  __/\\_/ " << std::endl;
-  std::cout << "\\____/\\___/ \\___/ \\__,_|_.__/ \\__, |\\___\\/   " << std::endl;
-  std::cout << "                              |___/          " << std::endl;
+  std::cout << "                         d8b                 d8b" << std::endl;
+  std::cout << "                         ?88                 88P" << std::endl;
+  std::cout << "                          88b               d88" << std::endl;
+  std::cout << "  88bd8b,d88b  d888b8b    888888b  d888b8b  888   d8888b  .d888b," << std::endl;
+  std::cout << "  88P'`?8P'?8bd8P' ?88    88P `?8bd8P' ?88  ?88  d8P' ?88 ?8b," << std::endl;
+  std::cout << " d88  d88  88P88b  ,88b  d88,  d8888b  ,88b  88b 88b  d88   `?8b" << std::endl;
+  std::cout << "d88' d88'  88b`?88P'`88bd88'`?88P'`?88P'`88b  88b`?8888P'`?888P'" << std::endl;
 
 
   return 0; 

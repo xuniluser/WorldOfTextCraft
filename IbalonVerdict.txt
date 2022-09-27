@@ -1,0 +1,3 @@
+Warrior;Handiong;0;10;0;
+Priest;Maribok;0;0;12;
+Rogue;Poringot;20;0;0;
