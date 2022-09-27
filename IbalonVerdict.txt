@@ -1,3 +1,5 @@
+Rogue;Tuktok;12;0;0;
+Priest;Bolinao;0;0;12;
 Warrior;Handiong;0;10;0;
 Priest;Maribok;0;0;12;
 Rogue;Poringot;20;0;0;

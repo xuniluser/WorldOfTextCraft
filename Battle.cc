@@ -25,7 +25,7 @@ void Battle::splash( std::ostream & out ) const {
   out << " \\______/  | _| `._____/__/     \\__\\ \\______|  \\______/  |__| \\__| |_______/" <<  std::endl;
  
 
-  out << "Welcome YOUR NAME.." << std::endl << std::endl;
+  out << "Welcome YOUR NAME." << std::endl << std::endl;
   out << description_ << std::endl;
 
 
@@ -573,7 +573,7 @@ void Battle::print( std::ostream & out ) {
 
 void Battle::printActions( std::ostream & out ) {
 
-  out << " ----- Action list ----" << std::endl;
+  out << std::endl << "----- Action list -----" << std::endl;
   for ( std::vector<QuickAction>::const_iterator it = actions_.begin();
 	it != actions_.end(); ++it ) {
     if ( it->source == 0 ) {
