@@ -50,7 +50,7 @@ int main( int argc, char ** argv ) {
   char c;
   std::cin >> c;
   if ( c == 'y' || c == 'Y') {
-    std::cout << "Excellent... let us begin..." << std::endl;
+    std::cout << "Excellent!... let us begin..." << std::endl;
 
     battle.printActions(); 
 
