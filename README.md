@@ -1,21 +1,14 @@
-# WorldOfTextCraft
-This is a trivial turn-based role-playing fighting game, designed to teach C++.
+# OragonRPG
 
-The goal was to make this "bare bones" without a complicated build so people can see for themselves what is involved in the software.
-This does require C++11 because of the use of a `vector< shared_ptr<T> >` for memory management.
-There is a very trivial Makefile to create three executables:
+This is a text-based turn-based role-playing fighting game, designed to teach C++.  
+The original source code is forked from https://github.com/ubsuny/WorldOfTextCraft.
 
-- **test_entity**: test the base fighting class functionality
-- **test_boss**: test the boss functionality
-- **test_battle**: test a pre-scripted battle
-- **WorldOfTextCraft**: the actual text-based RPG.
-=
-In order to compile just type `make`.
+In order to compile just type `make` while in the same folder/directory of the source codes.
 
 ## Usage
 
 ``` bash
-./WorldOfTextCraft player_config boss_config boss_script
+./OragonRPG player_config boss_config boss_script
 ```
 
 Here, we have:
@@ -27,7 +20,7 @@ Here, we have:
 For instance:
 
 ``` bash
-./WorldOfTextCraft IbalonVerdict.txt Oryol.txt OryolAttacks.txt
+./OragonRPG IbalonVerdict.txt Oryol.txt OryolAttacks.txt
 ```
 
 ## Syntax
@@ -44,9 +37,9 @@ In all syntax files, lines starting with "!" will be ignored (i.e. comments)
   ! Warrior, Rogue, Priest
   ! Fields are :
   ! name, entity type, attack power, heal power, defense power
-  Rogue;Curly;20;0;0;
-  Priest;Larry;0;0;8;
-  Warrior;Moe;0;3;0;
+  Rogue;Handiong;20;0;0;
+  Priest;Maribok;0;0;8;
+  Warrior;Poringot;0;3;0;
   ```
 
 - Boss configuration :
@@ -56,9 +49,9 @@ In all syntax files, lines starting with "!" will be ignored (i.e. comments)
 
   ``` text
   !Description:
-  Larry, Moe, and Curly are the Three Stooges. Their poor friend Shemp has been bitten by a zombie and is trying to kill them. Help Larry, Moe, and Curly put Shemp out of his misery. Nyuk Nyuk Nyuk.
+  Nakumbinsi ni Handiong sina Maribok at Poringot na pasukin ang masukal na kagubatan ng Isarog at lupigin ang aswang na si Oryol.
   ! Non-Player character. Fields are "name", attack power, heal power, defense power, mana, multi attack power
-  Shemp;20;0;0;10;5;
+  Oryol;20;0;0;10;5;
   ```
 
 - Boss script:
@@ -69,8 +62,8 @@ In all syntax files, lines starting with "!" will be ignored (i.e. comments)
 
   ``` text
   ! Test battle configuration.
-  Shemp;attack;target;
-  Shemp;attack;all;
+  Oryol;attack;target;
+  Oryol;attack;all;
   ```
 
 - Player script: (for `test_battle` only, not for `WorldOfTextCraft`):
@@ -81,9 +74,9 @@ In all syntax files, lines starting with "!" will be ignored (i.e. comments)
 
   ``` text
   ! Test battle configuration.
-  Curly;attack;Shemp;
-  Moe;defend;Shemp;
-  Larry;heal;Moe;
+  Handiong;defend;Oryol;
+  Maribok;heal;Handiong;
+  Poringot;attack;Oryol;
   ```
 
 ## Game Mechanics
@@ -100,12 +93,12 @@ Once a character reaches 0 hit points, it dies. All characters have a common bas
 
 You can adjust the game mechanics to add player classes of your own!
 
-## Playing WorldOfTextCraft : The Ibalon Scenario
+## Playing OragonRPG : The Ibalon Scenario
 
 To execute "The Ibalon" Scenario, execute:
 
 ``` bash
-./WorldOfTextCraft IbalonVerdict.txt Oryol.txt OryolAttacks.txt
+./OragonRPG IbalonVerdict.txt Oryol.txt OryolAttacks.txt
 ```
 
 You will be prompted as follows:
